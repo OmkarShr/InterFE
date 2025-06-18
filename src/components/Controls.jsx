@@ -1,4 +1,3 @@
-// components/Controls.jsx
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -26,63 +25,70 @@ function Controls() {
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-5 mt-8">
-      <button
-        onClick={startCamera}
-        disabled={isStreaming}
-        className={`flex items-center gap-2 px-7 py-3 rounded-full text-white font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-1 active:translate-y-0 ${
-          isStreaming
-            ? "hidden"
-            : "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
-        }`}
-      >
-        <FontAwesomeIcon icon={faPlay} />
-        Start Camera
-      </button>
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-semibold text-slate-800">Session Controls</h3>
+        <div className="text-sm text-slate-500">Manage monitoring session</div>
+      </div>
 
-      <button
-        onClick={stopCamera}
-        disabled={!isStreaming}
-        className={`flex items-center gap-2 px-7 py-3 rounded-full text-white font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-1 active:translate-y-0 ${
-          !isStreaming
-            ? "hidden"
-            : "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
-        }`}
-      >
-        <FontAwesomeIcon icon={faStop} />
-        Stop Camera
-      </button>
+      <div className="flex flex-wrap justify-center gap-4">
+        <button
+          onClick={startCamera}
+          disabled={isStreaming}
+          className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all shadow-sm hover:shadow-md ${
+            isStreaming
+              ? "hidden"
+              : "bg-green-600 hover:bg-green-700 text-white"
+          }`}
+        >
+          <FontAwesomeIcon icon={faPlay} />
+          Start Monitoring
+        </button>
 
-      <button
-        onClick={fetchStats}
-        disabled={isRefreshing}
-        className="flex items-center gap-2 px-7 py-3 rounded-full bg-gray-800 text-white font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
-      >
-        {isRefreshing ? (
-          <FontAwesomeIcon icon={faSpinner} spin />
-        ) : (
-          <FontAwesomeIcon icon={faSyncAlt} />
-        )}
-        {isRefreshing ? "Refreshing..." : "Refresh Stats"}
-      </button>
+        <button
+          onClick={stopCamera}
+          disabled={!isStreaming}
+          className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all shadow-sm hover:shadow-md ${
+            !isStreaming
+              ? "hidden"
+              : "bg-red-600 hover:bg-red-700 text-white"
+          }`}
+        >
+          <FontAwesomeIcon icon={faStop} />
+          End Session
+        </button>
 
-      <button
-        onClick={toggleFullscreen}
-        className="flex items-center gap-2 px-7 py-3 rounded-full bg-gray-800 text-white font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
-      >
-        <FontAwesomeIcon icon={faExpand} />
-        Fullscreen
-      </button>
+        <button
+          onClick={fetchStats}
+          disabled={isRefreshing}
+          className="flex items-center gap-3 px-6 py-3 rounded-xl bg-slate-600 hover:bg-slate-700 text-white font-semibold transition-all shadow-sm hover:shadow-md"
+        >
+          {isRefreshing ? (
+            <FontAwesomeIcon icon={faSpinner} spin />
+          ) : (
+            <FontAwesomeIcon icon={faSyncAlt} />
+          )}
+          {isRefreshing ? "Refreshing..." : "Refresh Data"}
+        </button>
 
-      <a
-        href="http://localhost:5000/stats"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 px-7 py-3 rounded-full bg-gray-800 text-white font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
-      >
-        <FontAwesomeIcon icon={faChartLine} />
-        Raw Data
-      </a>
+        <button
+          onClick={toggleFullscreen}
+          className="flex items-center gap-3 px-6 py-3 rounded-xl bg-slate-600 hover:bg-slate-700 text-white font-semibold transition-all shadow-sm hover:shadow-md"
+        >
+          <FontAwesomeIcon icon={faExpand} />
+          Fullscreen
+        </button>
+
+        <a
+          href="http://localhost:5000/stats"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all shadow-sm hover:shadow-md"
+        >
+          <FontAwesomeIcon icon={faChartLine} />
+          Raw Analytics
+        </a>
+      </div>
     </div>
   );
 }
