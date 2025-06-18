@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import useCameraStore from "../store/cameraStore";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVideo, faVideoSlash } from "@fortawesome/free-solid-svg-icons";
 
 function Webcam() {
   const videoRef = useRef(null);
@@ -56,23 +58,34 @@ function Webcam() {
   }, [isStreaming]);
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="w-full h-full flex items-center justify-center relative">
       {isStreaming ? (
-        <video 
-          ref={videoRef} 
-          autoPlay 
-          muted 
-          className="w-full h-full object-cover rounded-lg shadow-sm" 
-        />
-      ) : (
-        <div className="flex flex-col items-center justify-center text-slate-400 space-y-3">
-          <div className="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center">
-            <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-            </svg>
+        <>
+          <video 
+            ref={videoRef} 
+            autoPlay 
+            muted 
+            className="w-full h-full object-cover rounded-xl shadow-lg" 
+          />
+          {/* Live indicator */}
+          <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center space-x-2">
+            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            <span>LIVE</span>
           </div>
-          <p className="text-sm font-medium">Camera Inactive</p>
-          <p className="text-xs">Click "Start Monitoring" to begin</p>
+        </>
+      ) : (
+        <div className="flex flex-col items-center justify-center text-slate-500 space-y-6 p-8">
+          <div className="w-20 h-20 bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl flex items-center justify-center shadow-lg">
+            <FontAwesomeIcon icon={faVideoSlash} className="text-2xl text-slate-400" />
+          </div>
+          <div className="text-center">
+            <p className="text-lg font-semibold text-slate-600 mb-2">Camera Standby</p>
+            <p className="text-sm text-slate-500">Click "Start AI Monitoring" to begin session</p>
+          </div>
+          <div className="flex items-center space-x-2 text-xs text-slate-400">
+            <FontAwesomeIcon icon={faVideo} />
+            <span>Ready for professional monitoring</span>
+          </div>
         </div>
       )}
     </div>
