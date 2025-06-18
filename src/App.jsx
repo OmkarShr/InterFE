@@ -1,11 +1,11 @@
-import Webcam from "./components/Webcam";
-import ProcessedFeed from "./components/ProcessedFeed";
-import Stats from "./components/Stats";
-import Controls from "./components/Controls";
-import Report from "./components/Report";
-import Header from "./components/Header";
-import StatusBar from "./components/StatusBar";
-import AlertSystem from "./components/AlertSystem";
+import Webcam from "./components/Webcam.jsx";
+import ProcessedFeed from "./components/ProcessedFeed.jsx";
+import Stats from "./components/Stats.jsx";
+import Controls from "./components/Controls.jsx";
+import Report from "./components/Report.jsx";
+import Header from "./components/Header.jsx";
+import StatusBar from "./components/StatusBar.jsx";
+import AlertSystem from "./components/AlertSystem.jsx";
 import { useState } from "react";
 
 function App() {
