@@ -55,12 +55,14 @@ function App() {
                   <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
                   <h3 className="text-xl font-bold text-slate-800">Live Camera Feed</h3>
                 </div>
-                <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-6 aspect-video flex items-center justify-center border-2 border-slate-300/50 shadow-inner">
-                  <Webcam
-                    onStart={handleStartCamera}
-                    onStop={handleStopCamera}
-                    isStreaming={isStreaming}
-                  />
+                <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-2 border-2 border-slate-300/50 shadow-inner">
+                  <div className="w-full h-80 rounded-xl overflow-hidden">
+                    <Webcam
+                      onStart={handleStartCamera}
+                      onStop={handleStopCamera}
+                      isStreaming={isStreaming}
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -70,8 +72,10 @@ function App() {
                   <div className="w-3 h-3 bg-purple-600 rounded-full"></div>
                   <h3 className="text-xl font-bold text-slate-800">AI Analysis Feed</h3>
                 </div>
-                <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-6 aspect-video flex items-center justify-center border-2 border-slate-300/50 shadow-inner">
-                  <ProcessedFeed />
+                <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-2 border-2 border-slate-300/50 shadow-inner">
+                  <div className="w-full h-80 rounded-xl overflow-hidden">
+                    <ProcessedFeed />
+                  </div>
                 </div>
               </div>
             </div>

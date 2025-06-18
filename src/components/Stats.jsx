@@ -6,9 +6,7 @@ import {
   faEyeSlash,
   faExclamationTriangle,
   faShieldAlt,
-  faChartLine,
   faBrain,
-  faUserCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Stats() {
@@ -187,34 +185,6 @@ function Stats() {
           </div>
         </div>
       )}
-
-      {/* Session Insights */}
-      <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl border border-slate-200 p-6">
-        <div className="flex items-center space-x-3 mb-4">
-          <FontAwesomeIcon icon={faChartLine} className="text-xl text-slate-600" />
-          <h3 className="text-lg font-semibold text-slate-800">Session Insights</h3>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-slate-800">{stats.detections_count || 0}</div>
-            <div className="text-sm text-slate-600">Participants</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-slate-800">{Math.floor((stats.uptime || 0) / 60)}</div>
-            <div className="text-sm text-slate-600">Minutes</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-green-600">
-              {cheatingFlags?.is_looking_away ? "0" : "1"}
-            </div>
-            <div className="text-sm text-slate-600">Focus Score</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-blue-600">{stats.fps || 0}</div>
-            <div className="text-sm text-slate-600">Quality</div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
