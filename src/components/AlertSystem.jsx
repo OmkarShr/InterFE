@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useStatsStore from '../store/statsStore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExclamationTriangle, faUsers, faEyeSlash, faTimes, faShieldAlt, faSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faExclamationTriangle, faUsers, faEyeSlash, faTimes, faShieldAlt, faStar } from '@fortawesome/free-solid-svg-icons';
 
 const AlertSystem = () => {
   const { cheatingFlags } = useStatsStore();
@@ -82,7 +82,7 @@ const AlertSystem = () => {
                 <h4 className="text-xl font-black text-white mb-2">{alert.title}</h4>
                 <p className="text-lg text-violet-200 leading-relaxed mb-4 font-semibold">{alert.message}</p>
                 <div className="flex items-center space-x-3">
-                  <FontAwesomeIcon icon={faSparkles} className="text-violet-400" />
+                  <FontAwesomeIcon icon={faStar} className="text-violet-400" />
                   <p className="text-sm text-violet-300 font-bold">{alert.timestamp}</p>
                 </div>
               </div>

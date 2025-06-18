@@ -20,8 +20,7 @@ import {
   faAward,
   faLightbulb,
   faGem,
-  faStar,
-  faSparkles
+  faStar
 } from '@fortawesome/free-solid-svg-icons';
 
 const Report = () => {
@@ -387,7 +386,7 @@ const Report = () => {
                 <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border-2 border-blue-400/20 shadow-xl">
                   <div className="flex items-center space-x-6">
                     <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center shadow-2xl border-2 border-white/20">
-                      <FontAwesomeIcon icon={faSparkles} className="text-white text-2xl" />
+                      <FontAwesomeIcon icon={faStar} className="text-white text-2xl" />
                     </div>
                     <div className="flex-1">
                       <div className="font-black text-white text-xl mb-2">Session Quality</div>

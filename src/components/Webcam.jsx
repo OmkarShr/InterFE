@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import useCameraStore from "../store/cameraStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVideo, faVideoSlash, faSparkles } from "@fortawesome/free-solid-svg-icons";
+import { faVideo, faVideoSlash, faStar } from "@fortawesome/free-solid-svg-icons";
 
 function Webcam() {
   const videoRef = useRef(null);
@@ -83,7 +83,7 @@ function Webcam() {
             <p className="text-lg text-violet-300 font-semibold">Click "Initiate Neural Monitoring" to begin elite session</p>
           </div>
           <div className="flex items-center space-x-3 text-violet-400">
-            <FontAwesomeIcon icon={faSparkles} />
+            <FontAwesomeIcon icon={faStar} />
             <span className="font-semibold">Ready for professional neural monitoring</span>
           </div>
         </div>

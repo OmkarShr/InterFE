@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBrain, faRobot, faSparkles } from "@fortawesome/free-solid-svg-icons";
+import { faBrain, faRobot, faStar } from "@fortawesome/free-solid-svg-icons";
 
 function ProcessedFeed() {
   return (
@@ -23,7 +23,7 @@ function ProcessedFeed() {
           <p className="text-lg text-violet-300 font-semibold">Awaiting video feed for advanced behavioral processing</p>
         </div>
         <div className="flex items-center space-x-3 text-violet-400">
-          <FontAwesomeIcon icon={faSparkles} />
+          <FontAwesomeIcon icon={faStar} />
           <span className="font-semibold">Elite behavioral intelligence ready</span>
         </div>
       </div>
