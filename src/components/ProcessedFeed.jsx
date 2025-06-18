@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBrain, faRobot } from "@fortawesome/free-solid-svg-icons";
+import { faBrain, faRobot, faSparkles } from "@fortawesome/free-solid-svg-icons";
 
 function ProcessedFeed() {
   return (
@@ -8,23 +8,23 @@ function ProcessedFeed() {
       <img
         src="http://localhost:5000/video_feed"
         alt="AI Analysis Feed"
-        className="w-full h-full object-cover rounded-xl shadow-lg"
+        className="w-full h-full object-cover rounded-2xl shadow-2xl"
         onError={(e) => {
           e.target.style.display = "none";
           e.target.nextSibling.style.display = "flex";
         }}
       />
-      <div className="hidden flex-col items-center justify-center text-slate-500 space-y-6 p-8">
-        <div className="w-20 h-20 bg-gradient-to-br from-purple-200 to-indigo-300 rounded-2xl flex items-center justify-center shadow-lg">
-          <FontAwesomeIcon icon={faBrain} className="text-2xl text-purple-600" />
+      <div className="hidden flex-col items-center justify-center text-violet-200 space-y-8 p-10">
+        <div className="w-24 h-24 bg-gradient-to-br from-violet-500/20 to-purple-600/20 backdrop-blur-xl rounded-3xl flex items-center justify-center shadow-2xl border-2 border-violet-400/30">
+          <FontAwesomeIcon icon={faBrain} className="text-3xl text-violet-400" />
         </div>
         <div className="text-center">
-          <p className="text-lg font-semibold text-slate-600 mb-2">AI Analysis Standby</p>
-          <p className="text-sm text-slate-500">Waiting for video feed to begin processing</p>
+          <p className="text-2xl font-black text-white mb-3">Neural Analysis Standby</p>
+          <p className="text-lg text-violet-300 font-semibold">Awaiting video feed for advanced behavioral processing</p>
         </div>
-        <div className="flex items-center space-x-2 text-xs text-slate-400">
-          <FontAwesomeIcon icon={faRobot} />
-          <span>Advanced behavioral analysis ready</span>
+        <div className="flex items-center space-x-3 text-violet-400">
+          <FontAwesomeIcon icon={faSparkles} />
+          <span className="font-semibold">Elite behavioral intelligence ready</span>
         </div>
       </div>
     </div>

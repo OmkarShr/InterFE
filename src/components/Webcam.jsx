@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import useCameraStore from "../store/cameraStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVideo, faVideoSlash } from "@fortawesome/free-solid-svg-icons";
+import { faVideo, faVideoSlash, faSparkles } from "@fortawesome/free-solid-svg-icons";
 
 function Webcam() {
   const videoRef = useRef(null);
@@ -65,26 +65,26 @@ function Webcam() {
             ref={videoRef} 
             autoPlay 
             muted 
-            className="w-full h-full object-cover rounded-xl shadow-lg" 
+            className="w-full h-full object-cover rounded-2xl shadow-2xl" 
           />
-          {/* Live indicator */}
-          <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center space-x-2">
-            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-            <span>LIVE</span>
+          {/* Enhanced live indicator */}
+          <div className="absolute top-6 left-6 bg-gradient-to-r from-red-500 to-rose-600 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center space-x-3 shadow-2xl border-2 border-white/20">
+            <div className="w-3 h-3 bg-white rounded-full animate-pulse shadow-lg"></div>
+            <span className="text-lg">LIVE</span>
           </div>
         </>
       ) : (
-        <div className="flex flex-col items-center justify-center text-slate-500 space-y-6 p-8">
-          <div className="w-20 h-20 bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl flex items-center justify-center shadow-lg">
-            <FontAwesomeIcon icon={faVideoSlash} className="text-2xl text-slate-400" />
+        <div className="flex flex-col items-center justify-center text-violet-200 space-y-8 p-10">
+          <div className="w-24 h-24 bg-gradient-to-br from-slate-700/60 to-slate-800/60 backdrop-blur-xl rounded-3xl flex items-center justify-center shadow-2xl border-2 border-slate-600/50">
+            <FontAwesomeIcon icon={faVideoSlash} className="text-3xl text-slate-400" />
           </div>
           <div className="text-center">
-            <p className="text-lg font-semibold text-slate-600 mb-2">Camera Standby</p>
-            <p className="text-sm text-slate-500">Click "Start AI Monitoring" to begin session</p>
+            <p className="text-2xl font-black text-white mb-3">Camera Standby</p>
+            <p className="text-lg text-violet-300 font-semibold">Click "Initiate Neural Monitoring" to begin elite session</p>
           </div>
-          <div className="flex items-center space-x-2 text-xs text-slate-400">
-            <FontAwesomeIcon icon={faVideo} />
-            <span>Ready for professional monitoring</span>
+          <div className="flex items-center space-x-3 text-violet-400">
+            <FontAwesomeIcon icon={faSparkles} />
+            <span className="font-semibold">Ready for professional neural monitoring</span>
           </div>
         </div>
       )}
